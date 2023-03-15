@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    margin: 20px;
+    font-family: Century Gothic,Futura,sans-serif;
+}
+
+.main{
+    padding: 20px 20px;
+    
+}
+
+.card {
+   margin: 20px 12px;
+    width: 320px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px 10px;
+  }
+  
+  
+.container {
+padding: 15px 15px;
+text-align: center;
+font-size: 1rem;
+} 
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+
+    
+}
+
+.output{
+    width: 700px;
+}
+
+h1{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-area{
+    text-align: center;
+}
+
+.input-area{
+    display: flex;
+    gap: 15px;
+    /* text-align: center; */
+    margin: 10px 20px;
+}
+.input, button{
+    font-family: Century Gothic,Futura,sans-serif;
+}
+button{
+    padding: 5px 12px;
+
+}
+.filter-area{
+    font-size: .8rem;
+    display: flex;
+    gap: 3px;
+    margin: 0 20px;
+}
