@@ -9,15 +9,15 @@ import AllCharsRender from './AllCharsRender'
 
 
 
-function ErrorFallback({error, resetErrorBoundary}) {
-    return (
-      <div role="alert">
-        <p>Something went wrong:</p>
-        <pre>{error.message}</pre>
-        <button onClick={resetErrorBoundary}>Try again</button>
-      </div>
-    )
-  }
+// function ErrorFallback({error, resetErrorBoundary}) {
+//     return (
+//       <div role="alert">
+//         <p>Something went wrong:</p>
+//         <pre>{error.message}</pre>
+//         <button onClick={resetErrorBoundary}>Try again</button>
+//       </div>
+//     )
+//   }
 
 
 function App() {
@@ -38,6 +38,8 @@ function App() {
 
   function handleSearch() {
     setSearching(true);
+
+    
 }
 
 
@@ -53,17 +55,17 @@ function App() {
       <div className="content">
         {
           searchTerm.length > 0 && searching ? (
-            <ErrorBoundary error={error} setError={setError}
-                FallbackComponent={ErrorFallback}
+            // <ErrorBoundary error={error} setError={setError}
+            //     FallbackComponent={ErrorFallback}
 
-                onReset={() => {<AllCharsRender characters={characters} setCharacters={setCharacters} />}}>
+            //     onReset={() => {<AllCharsRender characters={characters} setCharacters={setCharacters} />}}>
                     
-                <FilteredRender searching={searching} searchTerm={searchTerm} characters={characters} setCharacters={setCharacters}  searchKey={searchKey} error={error}/>
+                <FilteredRender searching={searching} setSearching={setSearching} searchTerm={searchTerm} characters={characters} setCharacters={setCharacters}  searchKey={searchKey} error={error}/>
 
-            </ErrorBoundary>
+            // </ErrorBoundary>
 
           ) : (
-            <AllCharsRender characters={characters} setCharacters={setCharacters} />
+            <AllCharsRender characters={characters} setCharacters={setCharacters} setSearching={setSearching}/>
           )
         }
       </div>
