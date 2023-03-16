@@ -4,17 +4,18 @@ import axios from "axios"
 import CharDetails from "./CharDetails";
 
 
-export default function FilteredRender({ searching, setSearching, searchTerm, characters, setCharacters, searchKey, error, setError}) {
+export default function FilteredRender({  searchTerm,  characters, setCharacters, searchKey, setError}) {
     
 
     useEffect(() => {
-      axios.get(`https://rickandmortyapi.com/api/character/?${searchKey}=${searchTerm}`)
+       
+        axios.get(`https://rickandmortyapi.com/api/character/?${searchKey}=${searchTerm}`)
         .then(response => 
           setCharacters(response.data.results),
-         
-          error => setError(error),
-        );
-    }, [ searchKey, searching, error]);
+          error => setError(error)
+      );
+    
+    }, [ searchKey]);
     
     
   
